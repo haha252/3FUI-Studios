@@ -1,8 +1,10 @@
 <script setup>
 import { ref, onMounted, computed, reactive, watch } from 'vue'
 import { MagnifyingGlassIcon, ChevronDownIcon, ChevronUpIcon } from '@heroicons/vue/24/outline'
+import CommunityRules from './components/CommunityRules.vue'
 
 // State
+const currentView = ref('home') // 'home' | 'rules'
 const loading = ref(true)
 const projects = ref([]) // Stores all.json (minimal data)
 const initialPageData = ref([]) // Stores pages/1.json for New Releases
@@ -305,6 +307,7 @@ const getDetail = (id) => {
 
 <template>
   <div class="min-h-screen flex flex-col max-w-[1200px] mx-auto px-4 py-8">
+    <div v-show="currentView === 'home'">
     
     <!-- Header -->
     <header class="flex items-center gap-4 mb-8">
@@ -318,7 +321,7 @@ const getDetail = (id) => {
         3FUI Studios 是由 <a href="#" class="text-blue-400 hover:underline">FFmpegFreeUI</a> (3FUI) 开发者与核心技术支持成员发起的一个视频压制组项目，这个项目直接在 GitHub 上运行，我们不是专业压制组，我们的目标是在视觉无损的前提下压出最小的文件，仅做学习交流之用。我们欢迎所有 FFmpeg 用户加入项目分享你的成果。但是请注意：<span class="text-orange-500">我们拒绝所有版权受限和非法内容，这里不是自由发布影视资源的地方</span>。
       </p>
       <p>
-        在发布内容之前，请先完整阅读：<a href="#" class="text-yellow-500 hover:underline">3FUI Studios 社区规则</a>
+        在发布内容之前，请先完整阅读：<a href="#" @click.prevent="currentView = 'rules'" class="text-yellow-500 hover:underline">3FUI Studios 社区规则</a>
       </p>
     </div>
 
@@ -504,6 +507,9 @@ const getDetail = (id) => {
       <p>投诉侵权请直接联系有管理权限的用户，我们会第一时间删除违规内容</p>
       <p>所有内容将被审核，如发现刻意隐藏、虚报信息等欺诈行为，我们将直接进行除名</p>
     </footer>
+    </div>
+
+    <CommunityRules v-if="currentView === 'rules'" @go-back="currentView = 'home'" />
 
   </div>
 </template>
