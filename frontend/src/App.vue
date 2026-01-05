@@ -359,10 +359,10 @@ const getDetail = (id) => {
       </div>
 
       <!-- Filters -->
-      <div class="w-full max-w-3xl space-y-3">
-        <div v-for="cat in tagCategories" :key="cat.name" class="flex text-sm">
-          <span class="text-gray-400 w-24 shrink-0">筛选{{ cat.name }}：</span>
-          <div class="flex flex-wrap gap-x-4 gap-y-2">
+      <div class="w-full space-y-4">
+        <div v-for="cat in tagCategories" :key="cat.name" class="flex items-center justify-center text-sm">
+          <span class="text-gray-400 whitespace-nowrap shrink-0 mr-4">筛选{{ cat.name }}：</span>
+          <div class="flex flex-wrap gap-x-4 gap-y-2 justify-center">
             <button 
               v-for="tag in cat.tags" 
               :key="tag"
