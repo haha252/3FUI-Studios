@@ -1,0 +1,98 @@
+{
+  "page": 1,
+  "total_pages": 1,
+  "total_items": 4,
+  "items": [
+    {
+      "id": "2026/test_project_3",
+      "basic": {
+        "title": "测试项目 3：AV1 滤镜增强 [AV1 1080p]",
+        "description": "这是一个使用 AV1 编码并应用了多种滤镜增强的 1080p 项目。",
+        "tags": [
+          "1080p",
+          "AV1",
+          "滤镜",
+          "直链"
+        ]
+      },
+      "meta": {
+        "author": "Tester3"
+      },
+      "source": {
+        "url": "https://example.com/source3"
+      },
+      "download": {
+        "url": "https://example.com/download3"
+      }
+    },
+    {
+      "id": "2026/test_project_2",
+      "basic": {
+        "title": "测试项目 2：怀旧 720p [H.264/AVC 720p]",
+        "description": "这是一个使用 H.264/AVC 编码的 720p 直接压制项目。",
+        "tags": [
+          "普通成员",
+          "720p",
+          "H.264/AVC",
+          "直接压制",
+          "百度云"
+        ]
+      },
+      "meta": {
+        "author": "Tester2"
+      },
+      "source": {
+        "url": "https://example.com/source2"
+      },
+      "download": {
+        "url": "https://pan.baidu.com/s/example2"
+      }
+    },
+    {
+      "id": "2026/test_project_1",
+      "basic": {
+        "title": "测试项目 1：4K AI 修复 [H.266/VVC 2160p]",
+        "description": "这是一个使用 H.266/VVC 编码并结合 AI 修复技术的 4K 测试项目。",
+        "tags": [
+          "3FUI 核心成员",
+          "2160p",
+          "H.266/VVC",
+          "AI",
+          "磁力"
+        ]
+      },
+      "meta": {
+        "author": "Tester1"
+      },
+      "source": {
+        "url": "https://example.com/source1"
+      },
+      "download": {
+        "url": "magnet:?xt=urn:btih:example1"
+      }
+    },
+    {
+      "id": "2026/example_project",
+      "basic": {
+        "title": "示例项目：Big Buck Bunny [AV1 1080p]",
+        "description": "这是一个示例文件。使用了 SVT-AV1 编码器进行测试，主要关注在低码率下的细节保留情况。",
+        "tags": [
+          "AV1",
+          "1080p",
+          "SVT-AV1",
+          "Test"
+        ]
+      },
+      "meta": {
+        "author": "3FUI Team"
+      },
+      "source": {
+        "url": "https://media.xiph.org/video/derf/",
+        "description": "Xiph.org Video Test Media (Big Buck Bunny Source)"
+      },
+      "download": {
+        "url": "https://test-download-link.com/file.mkv"
+      }
+    }
+  ]
+}

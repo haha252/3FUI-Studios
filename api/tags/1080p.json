@@ -1,0 +1,36 @@
+{
+  "tag": "1080p",
+  "count": 2,
+  "items": [
+    {
+      "id": "2026/example_project",
+      "basic": {
+        "title": "示例项目：Big Buck Bunny [AV1 1080p]",
+        "tags": [
+          "AV1",
+          "1080p",
+          "SVT-AV1",
+          "Test"
+        ]
+      },
+      "meta": {
+        "author": "3FUI Team"
+      }
+    },
+    {
+      "id": "2026/test_project_3",
+      "basic": {
+        "title": "测试项目 3：AV1 滤镜增强 [AV1 1080p]",
+        "tags": [
+          "1080p",
+          "AV1",
+          "滤镜",
+          "直链"
+        ]
+      },
+      "meta": {
+        "author": "Tester3"
+      }
+    }
+  ]
+}

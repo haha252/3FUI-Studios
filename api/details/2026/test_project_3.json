@@ -1,0 +1,22 @@
+{
+  "id": "2026/test_project_3",
+  "basic": {
+    "title": "测试项目 3：AV1 滤镜增强 [AV1 1080p]",
+    "description": "这是一个使用 AV1 编码并应用了多种滤镜增强的 1080p 项目。",
+    "tags": [
+      "1080p",
+      "AV1",
+      "滤镜",
+      "直链"
+    ]
+  },
+  "meta": {
+    "author": "Tester3"
+  },
+  "source": {
+    "url": "https://example.com/source3"
+  },
+  "download": {
+    "url": "https://example.com/download3"
+  }
+}

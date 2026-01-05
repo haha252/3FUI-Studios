@@ -1,0 +1,38 @@
+[
+  {
+    "id": "2026/test_project_3",
+    "basic": {
+      "title": "测试项目 3：AV1 滤镜增强 [AV1 1080p]"
+    },
+    "meta": {
+      "author": "Tester3"
+    }
+  },
+  {
+    "id": "2026/test_project_2",
+    "basic": {
+      "title": "测试项目 2：怀旧 720p [H.264/AVC 720p]"
+    },
+    "meta": {
+      "author": "Tester2"
+    }
+  },
+  {
+    "id": "2026/test_project_1",
+    "basic": {
+      "title": "测试项目 1：4K AI 修复 [H.266/VVC 2160p]"
+    },
+    "meta": {
+      "author": "Tester1"
+    }
+  },
+  {
+    "id": "2026/example_project",
+    "basic": {
+      "title": "示例项目：Big Buck Bunny [AV1 1080p]"
+    },
+    "meta": {
+      "author": "3FUI Team"
+    }
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "tag": "滤镜",
+  "count": 1,
+  "items": [
+    {
+      "id": "2026/test_project_3",
+      "basic": {
+        "title": "测试项目 3：AV1 滤镜增强 [AV1 1080p]",
+        "tags": [
+          "1080p",
+          "AV1",
+          "滤镜",
+          "直链"
+        ]
+      },
+      "meta": {
+        "author": "Tester3"
+      }
+    }
+  ]
+}
