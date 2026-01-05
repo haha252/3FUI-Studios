@@ -1,0 +1,16 @@
+# 3FUI-Studios 网站配置文件
+# 修改此文件后，请运行 scripts/build_indexes.py 以应用更改
+
+# 网站基本信息
+site_name: "3FUI-Studios"
+description: "极简风格的视频编码技术交流与展示平台"
+
+# 核心设置
+# 分页大小：控制 api/pages/ 下每个 json 文件包含的项目数量
+# 建议：100-500 之间，过大影响加载，过小增加请求数
+items_per_page: 200
+
+# 维护者列表 (ID)
+# 目前主要用于显示，未来可能用于权限控制
+maintainers:
+  - "admin"

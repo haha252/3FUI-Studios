@@ -1,0 +1,23 @@
+{
+  "id": "2026/example_project",
+  "basic": {
+    "title": "示例项目：Big Buck Bunny [AV1 1080p]",
+    "description": "这是一个示例文件。使用了 SVT-AV1 编码器进行测试，主要关注在低码率下的细节保留情况。",
+    "tags": [
+      "AV1",
+      "1080p",
+      "SVT-AV1",
+      "Test"
+    ]
+  },
+  "meta": {
+    "author": "3FUI Team"
+  },
+  "source": {
+    "url": "https://media.xiph.org/video/derf/",
+    "description": "Xiph.org Video Test Media (Big Buck Bunny Source)"
+  },
+  "download": {
+    "url": "https://test-download-link.com/file.mkv"
+  }
+}

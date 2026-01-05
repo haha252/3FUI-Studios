@@ -1,0 +1,9 @@
+{
+  "site_name": "3FUI-Studios",
+  "total_items": 4,
+  "total_pages": 1,
+  "items_per_page": 200,
+  "first_page_url": "/api/pages/1.json",
+  "tags_url": "/api/tags.json",
+  "all_projects_url": "/api/all.json"
+}

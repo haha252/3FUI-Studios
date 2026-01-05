@@ -1,0 +1,16 @@
+{
+  "basic": {
+    "title": "测试项目 1：4K AI 修复 [H.266/VVC 2160p]",
+    "description": "这是一个使用 H.266/VVC 编码并结合 AI 修复技术的 4K 测试项目。",
+    "tags": ["3FUI 核心成员", "2160p", "H.266/VVC", "AI", "磁力"]
+  },
+  "meta": {
+    "author": "Tester1"
+  },
+  "source": {
+    "url": "https://example.com/source1"
+  },
+  "download": {
+    "url": "magnet:?xt=urn:btih:example1"
+  }
+}

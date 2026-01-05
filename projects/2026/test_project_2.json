@@ -1,0 +1,16 @@
+{
+  "basic": {
+    "title": "测试项目 2：怀旧 720p [H.264/AVC 720p]",
+    "description": "这是一个使用 H.264/AVC 编码的 720p 直接压制项目。",
+    "tags": ["普通成员", "720p", "H.264/AVC", "直接压制", "百度云"]
+  },
+  "meta": {
+    "author": "Tester2"
+  },
+  "source": {
+    "url": "https://example.com/source2"
+  },
+  "download": {
+    "url": "https://pan.baidu.com/s/example2"
+  }
+}

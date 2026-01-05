@@ -1,0 +1,21 @@
+{
+  "tag": "SVT-AV1",
+  "count": 1,
+  "items": [
+    {
+      "id": "2026/example_project",
+      "basic": {
+        "title": "示例项目：Big Buck Bunny [AV1 1080p]",
+        "tags": [
+          "AV1",
+          "1080p",
+          "SVT-AV1",
+          "Test"
+        ]
+      },
+      "meta": {
+        "author": "3FUI Team"
+      }
+    }
+  ]
+}
