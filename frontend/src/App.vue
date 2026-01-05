@@ -306,24 +306,31 @@ const getDetail = (id) => {
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col max-w-[1200px] mx-auto px-4 py-8">
-    <div v-show="currentView === 'home'">
+  <div class="min-h-screen flex flex-col">
+    <div v-show="currentView === 'home'" class="flex-1 flex flex-col">
     
-    <!-- Header -->
-    <header class="flex items-center gap-4 mb-8">
-      <h1 class="text-3xl font-bold text-gray-100">3FUI Studios</h1>
-      <span class="text-2xl text-gray-500">压片战争行动</span>
-    </header>
-
-    <!-- Intro -->
-    <div class="mb-12 text-gray-400 text-sm leading-relaxed max-w-4xl">
-      <p class="mb-2">
-        3FUI Studios 是由 <a href="#" class="text-blue-400 hover:underline">FFmpegFreeUI</a> (3FUI) 开发者与核心技术支持成员发起的一个视频压制组项目，这个项目直接在 GitHub 上运行，我们不是专业压制组，我们的目标是在视觉无损的前提下压出最小的文件，仅做学习交流之用。我们欢迎所有 FFmpeg 用户加入项目分享你的成果。但是请注意：<span class="text-orange-500">我们拒绝所有版权受限和非法内容，这里不是自由发布影视资源的地方</span>。
-      </p>
-      <p>
-        在发布内容之前，请先完整阅读：<a href="#" @click.prevent="currentView = 'rules'" class="text-yellow-500 hover:underline">3FUI Studios 社区规则</a>
-      </p>
+    <!-- Header Full Width -->
+    <div class="w-full bg-[#333] border-b border-[#444] mb-8">
+      <div class="max-w-[1920px] mx-auto px-8 py-6">
+        <header class="flex items-center gap-4">
+          <h1 class="text-3xl font-bold text-gray-100">3FUI Studios</h1>
+          <span class="text-2xl text-gray-500">压片战争行动</span>
+        </header>
+      </div>
     </div>
+
+    <!-- Main Content Container -->
+    <div class="w-full max-w-[1920px] mx-auto px-8 flex-1 flex flex-col">
+
+      <!-- Intro -->
+      <div class="mb-12 text-gray-400 text-base leading-relaxed">
+        <p class="mb-2">
+          3FUI Studios 是由 <a href="#" class="text-blue-400 hover:underline">FFmpegFreeUI</a> (3FUI) 开发者与核心技术支持成员发起的一个视频压制组项目，这个项目直接在 GitHub 上运行，我们不是专业压制组，我们的目标是在视觉无损的前提下压出最小的文件，仅做学习交流之用。我们欢迎所有 FFmpeg 用户加入项目分享你的成果。但是请注意：<span class="text-orange-500">我们拒绝所有版权受限和非法内容，这里不是自由发布影视资源的地方</span>。
+        </p>
+        <p>
+          在发布内容之前，请先完整阅读：<a href="#" @click.prevent="currentView = 'rules'" class="text-yellow-500 hover:underline">3FUI Studios 社区规则</a>
+        </p>
+      </div>
 
     <!-- Search Section -->
     <div class="flex flex-col items-center mb-16">
@@ -503,10 +510,11 @@ const getDetail = (id) => {
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-xs text-gray-600 pb-8 space-y-2">
+    <footer class="text-center text-xs text-gray-600 pb-8 space-y-2 mt-auto">
       <p>投诉侵权请直接联系有管理权限的用户，我们会第一时间删除违规内容</p>
       <p>所有内容将被审核，如发现刻意隐藏、虚报信息等欺诈行为，我们将直接进行除名</p>
     </footer>
+    </div>
     </div>
 
     <CommunityRules v-if="currentView === 'rules'" @go-back="currentView = 'home'" />
