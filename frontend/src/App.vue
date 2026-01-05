@@ -39,9 +39,10 @@ const detailsCache = reactive({}) // id -> detail object
 onMounted(async () => {
   try {
     // Parallel fetch: pages/1.json (for New Releases) and tags.json
+    const baseUrl = import.meta.env.BASE_URL
     const [resPage1, resTags] = await Promise.all([
-      fetch('/api/pages/1.json'),
-      fetch('/api/tags.json')
+      fetch(`${baseUrl}api/pages/1.json`),
+      fetch(`${baseUrl}api/tags.json`)
     ])
 
     if (resPage1.ok) {
@@ -97,7 +98,7 @@ const fetchTagItems = async (tagName) => {
   try {
     // Need to encode filename because it might contain spaces or special chars (though safe_filename handles most)
     // Actually, filename from map should be used directly as path segment.
-    const res = await fetch(`/api/tags/${filename}`)
+    const res = await fetch(`${import.meta.env.BASE_URL}api/tags/${filename}`)
     if (res.ok) {
       const items = await res.json()
       // Note: items is { tag: "...", count: N, items: [...] }
@@ -257,7 +258,7 @@ const fetchDetail = async (id) => {
   
   // loadingDetails.value.add(id) // Optional UI indication
   try {
-    const res = await fetch(`/api/details/${id}.json`)
+    const res = await fetch(`${import.meta.env.BASE_URL}api/details/${id}.json`)
     if (res.ok) {
       const data = await res.json()
       detailsCache[id] = data
