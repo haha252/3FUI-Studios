@@ -453,13 +453,13 @@ const getDownloadLinks = (id) => {
                   </div>
                   <div class="space-y-2">
                     <div v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" class="flex items-center gap-2">
-                      <span class="text-gray-500">下载:</span>
+                      <span class="text-white">下载:</span>
                       <a :href="link.url" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline break-all">
                         {{ link.name || link.url }}
                       </a>
                     </div>
                     <div v-if="getDetail(item.id).source?.url" class="flex items-center gap-2">
-                       <span class="text-gray-500">来源:</span>
+                       <span class="text-white">来源:</span>
                        <a :href="getDetail(item.id).source.url" target="_blank" class="text-gray-400 hover:text-gray-300 hover:underline break-all">
                         {{ getDetail(item.id).source.url }}
                       </a>
@@ -517,13 +517,13 @@ const getDownloadLinks = (id) => {
                   </div>
                   <div class="space-y-2">
                     <div v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" class="flex items-center gap-2">
-                      <span class="text-gray-500">下载:</span>
+                      <span class="text-white">下载:</span>
                       <a :href="link.url" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline break-all">
                         {{ link.name || link.url }}
                       </a>
                     </div>
                     <div v-if="getDetail(item.id).source?.url" class="flex items-center gap-2">
-                       <span class="text-gray-500">来源:</span>
+                       <span class="text-white">来源:</span>
                        <a :href="getDetail(item.id).source.url" target="_blank" class="text-gray-400 hover:text-gray-300 hover:underline break-all">
                         {{ getDetail(item.id).source.url }}
                       </a>
