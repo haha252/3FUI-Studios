@@ -31,11 +31,26 @@
       }
     },
     "download": {
-      "type": "object",
-      "required": ["url"],
-      "properties": {
-        "url": { "type": "string", "format": "uri" }
-      }
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["url"],
+          "properties": {
+            "url": { "type": "string", "format": "uri" }
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "url"],
+            "properties": {
+              "name": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      ]
     }
   }
 }

@@ -10,7 +10,14 @@
   "source": {
     "url": "https://example.com/source3"
   },
-  "download": {
-    "url": "https://example.com/download3"
-  }
+  "download": [
+    {
+      "name": "主线路",
+      "url": "https://example.com/download3"
+    },
+    {
+      "name": "备用线路",
+      "url": "https://example.com/download3_mirror"
+    }
+  ]
 }

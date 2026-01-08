@@ -303,6 +303,19 @@ const getDetail = (id) => {
   return detailsCache[id] || {}
 }
 
+const getDownloadLinks = (id) => {
+  const detail = getDetail(id)
+  const download = detail.download
+  if (!download) return []
+  
+  if (Array.isArray(download)) {
+    return download
+  } else if (download.url) {
+    return [{ name: '立即下载', url: download.url }]
+  }
+  return []
+}
+
 </script>
 
 <template>
@@ -417,8 +430,8 @@ const getDetail = (id) => {
                     {{ tag }}
                   </span>
                 </div>
-                <div class="text-xs text-gray-500 flex gap-4">
-                  <span>发布者: {{ item.meta.author }}</span>
+                <div class="text-sm text-gray-500 flex gap-4 items-center">
+                  <span>发布者: <span class="text-base font-bold text-gray-300">{{ item.meta.author }}</span></span>
                   <span>ID: {{ item.id }}</span>
                 </div>
               </div>
@@ -436,9 +449,9 @@ const getDetail = (id) => {
                     <p class="mb-2 text-gray-300 font-medium">简介/参数：</p>
                     <p class="whitespace-pre-wrap">{{ getDetail(item.id).basic?.description || '暂无描述' }}</p>
                   </div>
-                  <div class="flex gap-4">
-                    <a v-if="getDetail(item.id).download?.url" :href="getDetail(item.id).download.url" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm transition-colors">
-                      立即下载
+                  <div class="flex gap-4 flex-wrap">
+                    <a v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" :href="link.url" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm transition-colors">
+                      {{ link.name || '立即下载' }}
                     </a>
                     <a v-if="getDetail(item.id).source?.url" :href="getDetail(item.id).source.url" target="_blank" class="bg-[#333] hover:bg-[#444] text-gray-200 px-4 py-2 rounded text-sm transition-colors">
                       查看来源
@@ -477,8 +490,8 @@ const getDetail = (id) => {
                   <span class="text-gray-200 font-medium group-hover:text-blue-400 transition-colors">{{ item.basic.title }}</span>
                   <span class="bg-red-900/50 text-red-300 text-[10px] px-1.5 py-0.5 rounded border border-red-900">NEW</span>
                 </div>
-                <div class="text-xs text-gray-500">
-                  {{ item.meta.author }}
+                <div class="text-sm text-gray-500">
+                  <span class="text-base font-bold text-gray-300">{{ item.meta.author }}</span>
                 </div>
               </div>
               <div>
@@ -494,9 +507,12 @@ const getDetail = (id) => {
                   <div class="mb-4">
                     <p class="whitespace-pre-wrap">{{ getDetail(item.id).basic?.description || '暂无描述' }}</p>
                   </div>
-                  <div class="flex gap-4">
-                    <a v-if="getDetail(item.id).download?.url" :href="getDetail(item.id).download.url" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm transition-colors">
-                      下载
+                  <div class="flex gap-4 flex-wrap">
+                    <a v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" :href="link.url" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm transition-colors">
+                      {{ link.name || '立即下载' }}
+                    </a>
+                    <a v-if="getDetail(item.id).source?.url" :href="getDetail(item.id).source.url" target="_blank" class="bg-[#333] hover:bg-[#444] text-gray-200 px-4 py-2 rounded text-sm transition-colors">
+                      查看来源
                     </a>
                   </div>
               </template>

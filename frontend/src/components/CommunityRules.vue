@@ -5,7 +5,7 @@ const emit = defineEmits(['go-back'])
 </script>
 
 <template>
-  <div class="max-w-4xl mx-auto text-gray-300 leading-relaxed space-y-12 pb-16">
+  <div class="max-w-4xl mx-auto text-gray-300 leading-relaxed space-y-12 pb-16 pt-16">
     <!-- Header / Back Button -->
     <div class="mb-8">
       <button 
