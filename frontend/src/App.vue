@@ -460,7 +460,7 @@ const getDownloadLinks = (id) => {
                     </div>
                     <div v-if="getDetail(item.id).source?.url" class="flex items-center gap-2">
                        <span class="text-white">来源:</span>
-                       <a :href="getDetail(item.id).source.url" target="_blank" class="text-gray-400 hover:text-gray-300 hover:underline break-all">
+                       <a :href="getDetail(item.id).source.url" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline break-all">
                         {{ getDetail(item.id).source.url }}
                       </a>
                     </div>
@@ -489,17 +489,23 @@ const getDownloadLinks = (id) => {
         <div v-if="newReleases.length > 0">
           <div v-for="item in newReleases" :key="item.id" class="border-b border-[#333] last:border-0">
              <!-- Row Header (Clickable) -->
-             <div 
+            <div 
               @click="toggleExpandNewRelease(item.id)"
               class="px-6 py-4 cursor-pointer hover:bg-[#252525] transition-colors flex items-center justify-between group"
             >
-              <div class="flex flex-col gap-1">
+              <div class="flex flex-col gap-2">
                 <div class="flex items-center gap-3">
-                  <span class="text-gray-200 font-medium group-hover:text-blue-400 transition-colors">{{ item.basic.title }}</span>
+                  <span class="text-gray-200 font-medium group-hover:text-blue-400 transition-colors text-lg">{{ item.basic.title }}</span>
                   <span class="bg-red-900/50 text-red-300 text-[10px] px-1.5 py-0.5 rounded border border-red-900">NEW</span>
                 </div>
-                <div class="text-sm text-gray-500">
-                  <span class="text-base font-bold text-gray-300">{{ item.meta.author }}</span>
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="tag in (item.basic.tags || []).slice(0, 5)" :key="tag" class="text-xs bg-[#333] text-gray-400 px-1.5 py-0.5 rounded border border-[#444]">
+                    {{ tag }}
+                  </span>
+                </div>
+                <div class="text-sm text-gray-500 flex gap-4 items-center mt-1">
+                  <span>发布者: <span class="text-base font-bold text-gray-300">{{ item.meta.author }}</span></span>
+                  <span>ID: {{ item.id }}</span>
                 </div>
               </div>
               <div>
@@ -524,7 +530,7 @@ const getDownloadLinks = (id) => {
                     </div>
                     <div v-if="getDetail(item.id).source?.url" class="flex items-center gap-2">
                        <span class="text-white">来源:</span>
-                       <a :href="getDetail(item.id).source.url" target="_blank" class="text-gray-400 hover:text-gray-300 hover:underline break-all">
+                       <a :href="getDetail(item.id).source.url" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline break-all">
                         {{ getDetail(item.id).source.url }}
                       </a>
                     </div>
