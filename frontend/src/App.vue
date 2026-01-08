@@ -423,14 +423,16 @@ const getDownloadLinks = (id) => {
               @click="toggleExpand(item.id)"
               class="px-6 py-4 cursor-pointer hover:bg-[#252525] transition-colors flex items-center justify-between group"
             >
-              <div class="flex flex-col gap-1">
+              <div class="flex flex-col gap-2">
                 <div class="flex items-center gap-3">
-                  <span class="text-gray-200 font-medium group-hover:text-blue-400 transition-colors">{{ item.basic.title }}</span>
-                  <span v-for="tag in (item.basic.tags || []).slice(0, 3)" :key="tag" class="text-xs bg-[#333] text-gray-400 px-1.5 py-0.5 rounded">
+                  <span class="text-gray-200 font-medium group-hover:text-blue-400 transition-colors text-lg">{{ item.basic.title }}</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="tag in (item.basic.tags || []).slice(0, 5)" :key="tag" class="text-xs bg-[#333] text-gray-400 px-1.5 py-0.5 rounded border border-[#444]">
                     {{ tag }}
                   </span>
                 </div>
-                <div class="text-sm text-gray-500 flex gap-4 items-center">
+                <div class="text-sm text-gray-500 flex gap-4 items-center mt-1">
                   <span>发布者: <span class="text-base font-bold text-gray-300">{{ item.meta.author }}</span></span>
                   <span>ID: {{ item.id }}</span>
                 </div>
@@ -449,13 +451,19 @@ const getDownloadLinks = (id) => {
                     <p class="mb-2 text-gray-300 font-medium">简介/参数：</p>
                     <p class="whitespace-pre-wrap">{{ getDetail(item.id).basic?.description || '暂无描述' }}</p>
                   </div>
-                  <div class="flex gap-4 flex-wrap">
-                    <a v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" :href="link.url" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm transition-colors">
-                      {{ link.name || '立即下载' }}
-                    </a>
-                    <a v-if="getDetail(item.id).source?.url" :href="getDetail(item.id).source.url" target="_blank" class="bg-[#333] hover:bg-[#444] text-gray-200 px-4 py-2 rounded text-sm transition-colors">
-                      查看来源
-                    </a>
+                  <div class="space-y-2">
+                    <div v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" class="flex items-center gap-2">
+                      <span class="text-gray-500">下载:</span>
+                      <a :href="link.url" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline break-all">
+                        {{ link.name || link.url }}
+                      </a>
+                    </div>
+                    <div v-if="getDetail(item.id).source?.url" class="flex items-center gap-2">
+                       <span class="text-gray-500">来源:</span>
+                       <a :href="getDetail(item.id).source.url" target="_blank" class="text-gray-400 hover:text-gray-300 hover:underline break-all">
+                        {{ getDetail(item.id).source.url }}
+                      </a>
+                    </div>
                   </div>
               </template>
             </div>
@@ -507,13 +515,19 @@ const getDownloadLinks = (id) => {
                   <div class="mb-4">
                     <p class="whitespace-pre-wrap">{{ getDetail(item.id).basic?.description || '暂无描述' }}</p>
                   </div>
-                  <div class="flex gap-4 flex-wrap">
-                    <a v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" :href="link.url" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded text-sm transition-colors">
-                      {{ link.name || '立即下载' }}
-                    </a>
-                    <a v-if="getDetail(item.id).source?.url" :href="getDetail(item.id).source.url" target="_blank" class="bg-[#333] hover:bg-[#444] text-gray-200 px-4 py-2 rounded text-sm transition-colors">
-                      查看来源
-                    </a>
+                  <div class="space-y-2">
+                    <div v-for="(link, idx) in getDownloadLinks(item.id)" :key="idx" class="flex items-center gap-2">
+                      <span class="text-gray-500">下载:</span>
+                      <a :href="link.url" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline break-all">
+                        {{ link.name || link.url }}
+                      </a>
+                    </div>
+                    <div v-if="getDetail(item.id).source?.url" class="flex items-center gap-2">
+                       <span class="text-gray-500">来源:</span>
+                       <a :href="getDetail(item.id).source.url" target="_blank" class="text-gray-400 hover:text-gray-300 hover:underline break-all">
+                        {{ getDetail(item.id).source.url }}
+                      </a>
+                    </div>
                   </div>
               </template>
             </div>
